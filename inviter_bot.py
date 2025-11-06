@@ -163,7 +163,6 @@ async def odam_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     lines = []
     # Avval o'zingizning hisobingiz
     display_name = user.username and f"@{user.username}" or f"{user.full_name}"
-    lines.append(f"Siz ({display_name}) bu guruhga <b>{my_cnt}</b> ta odam qo'shgansiz.\n")
     # TOP10
     if not top:
         lines.append("Hozircha guruhda saqlangan qo'shishlar yo'q.")
@@ -203,7 +202,6 @@ async def mycount_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not chat or not user:
         return
     cnt = get_user_count(chat.id, user.id)
-    await update.message.reply_text(f"Siz bu guruhga {cnt} ta odam qo'shgansiz.")
 
 async def reset_command(update: Update, context: ContextTypes.DEFAULT_TYPE):
     chat = update.effective_chat
